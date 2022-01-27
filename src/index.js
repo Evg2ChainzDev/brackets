@@ -30,7 +30,7 @@ module.exports = function check(str, bracketsConfig) {
                 if (stack.length==0) {
                     stack.push(currentSymbol)
                 } else {
-                    if ((stack[stack.length-1]==currentSymbol)) { 
+                    if ((stack[stack.length-1]==currentSymbol)&&(currentSymbol=="|")) { 
                         console.log(`key = value = |`);
                         stack.pop()
                     } else {stack.push(currentSymbol)}
@@ -60,6 +60,7 @@ module.exports = function check(str, bracketsConfig) {
         return isBracketsOkRes;
     }
     console.log(` ---------- ALGORITM END ---------- `)
+    return isBracketsOk (str);
     return isBracketsOk (str);
     
 }
